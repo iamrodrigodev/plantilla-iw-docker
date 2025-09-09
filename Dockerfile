@@ -5,7 +5,8 @@ ENV TZ=America/Lima
 
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
-COPY conf/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources
+# Ubuntu sources debe estar en la misma carpeta que el Dockerfile
+COPY ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources
 
 RUN rm -f /etc/apt/sources.list
 
